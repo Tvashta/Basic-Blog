@@ -1,0 +1,30 @@
+<%- include('partials/header') -%>
+
+<img src="images/Bottled musings .png" class="image" alt="bottle">
+
+<div class="container">
+  <h1 class="main-head">Home <i class="fas fa-home icon"></i></h1>
+  <div class="start-para">
+    <p><%= hPara %></p>
+  </div>
+
+  <div class="card-deck row">
+    <%posts.forEach(function(i){%>
+
+    <div class="col-lg-4 col-md-6">
+      <div class="card post-cards">
+        <div class="card-header">
+
+          <h1><%= i.title %></h1>
+        </div>
+        <div class="card-body">
+          <p><%= i.body.substring(0,100) %> ...</p>
+          <a class="btn btn-outline-light  btn-lg btn-block" href="/post/<%= i._id %>">Read more</a>
+        </div>
+      </div>
+      </div>
+
+      <%});%>
+    </div>
+
+    <%- include('partials/footer') -%>
